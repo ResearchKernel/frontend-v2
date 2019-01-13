@@ -1,9 +1,14 @@
 .search-wrapper {
+    width: 80%;
+    margin: auto;
     padding: 30px 0;
-    border-top: 1px solid #c4c4c467;
-    border-bottom: 1px solid #c4c4c467;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 #c0c0c0a8;
+    // border: 1px solid #c4c4c467;
+    // border-bottom: 1px solid #c4c4c467;
 
-    & form.search-box {
+    & form.search-box, 
+    & .search-result {
         width: 90%;
         margin: auto;
 
@@ -13,7 +18,7 @@
             justify-content: space-evenly;
 
             & > * {
-                border: 1px solid #46a02b;
+                border: 1px solid #37a000;
                 padding: 10px;
                 background: transparent;
                 border-radius: 3px;
@@ -24,30 +29,43 @@
                 width: 80%;
     
                 &::placeholder {
-                    color: #46a02b;
+                    color: #37a000;
                 }
             }
     
             & input[type="submit"],
             & input[type="button"] {
                 width: 9.5%;
-                color: #46a02b;
+                color: #37a000;
+                cursor: pointer;
             }
             
             & input[type="submit"] {
-                background: #46a02b;
+                background: #37a000;
                 color: #fff;
             }
         }
 
         & .adv-search {
-            margin: 30px 0 0 0;
+            overflow: hidden;
+            max-height: 600px;
+            padding-top: 30px;
+            transition: .4s cubic-bezier(.65,.05,.36,1) all;
+        }
+
+        // & .show-adv-search {
+        // }
+
+        & .hide-adv-search {
+            max-height: 0;
+            padding-top: 0;
         }
     }
 }
 
 @media (max-width: 800px) {
-    .search-wrapper {    
+    .search-wrapper {
+        width: 95%;
         & form.search-box {
             & .basic-search {
                 & input[name="q"] {
@@ -60,6 +78,21 @@
                     width: 49.5%;
                 }
             }
+            & .adv-search {
+                max-height: 800px;
+            }
+
+            & .hide-adv-search {
+                max-height: 0;
+            }
         }
     }
+}
+
+// no data found
+.no-data-found {
+    font-size: 1.2rem;
+    color: #9b9b9b;
+    margin: 2rem 0;
+    text-align: center;
 }
