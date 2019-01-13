@@ -1,0 +1,24 @@
+.result-card {
+    padding: 40px 0;
+    border-bottom: 1px solid #c0c0c0a8;
+
+    & .header {
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+
+    & .description {
+        color: #5a5a5a;
+        margin: 10px 0;
+    }
+
+    & .button {
+        background: unset;
+        font-size: inherit;
+        border: 1px solid #c0c0c0a8;
+        margin: 1px;
+        padding: 7px 10px;
+        border-radius: 2px; 
+        cursor: pointer;
+    }
+}
